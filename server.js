@@ -10,6 +10,10 @@ app.use(express.json())
 
 app.use('/api', router);
 
+app.use('/api/products', (req, res) => {
+    return res.status(200).json({ message: 'Products API' })    
+});
+
 app.listen(PORT, () => {
     console.log(`Server started at port ${PORT}`)
 })
